@@ -819,7 +819,7 @@ right = [
 @app.route("/")
 def random_name():
 	name = random.choice(left) + "_" + random.choice(right)
-	return render_template('random_name.html', name=name)
+	return render_template('randomName.html', name=name)
 
 if __name__ == '__main__':
 	app.run(debug=True, host='0.0.0.0')
