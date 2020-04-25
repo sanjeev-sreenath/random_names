@@ -20,7 +20,3 @@ $(".case-button").on('mouseleave', function() {
   var tooltip = $(this);
   tooltip.attr('data-original-title', 'Copy Text');
 });
-
-function anotherName() {
-    location.reload();
-}
