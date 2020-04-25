@@ -54,11 +54,11 @@
         </nav>
 
         <ul class="list-group text-center">
-        <li class="list-group-item"><button type="button" class="btn btn-dark btn-lg mt-3"
+        <li class="list-group-item border border-dark bg-light text-dark"><button type="button" class="btn btn-dark btn-lg mt-3"
                                             onclick="anotherName()"><i class="fas fa-redo"></i></button></li>
         {% for case in all_cases %}
-            <li class="list-group-item">
-                <h2 class="float-left">{{ case }}</h2>
+            <li class="list-group-item border border-dark bg-light text-dark">
+                <h2 class="float-left text-monospace">{{ case }}</h2>
                 <button id="{{ loop.index0 }}" type="button" class="float-right btn btn-dark btn-sm case-button"
                         data-toggle="tooltip" data-placement="bottom" title="Copy Text" name="{{ case }}">
                     <i class="fas fa-clipboard"></i></button>
