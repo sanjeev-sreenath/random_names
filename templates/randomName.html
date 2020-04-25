@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+{#      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">#}
 
     <title>Docker style random names generator</title>
 
@@ -53,13 +54,14 @@
         </nav>
 
         <ul class="list-group text-center">
-        <li class="list-group-item"><button type="button" class="btn btn-success btn-lg mt-3"
-                                            onclick="anotherName()">Again</button></li>
+        <li class="list-group-item"><button type="button" class="btn btn-dark btn-lg mt-3"
+                                            onclick="anotherName()"><i class="fas fa-redo"></i></button></li>
         {% for case in all_cases %}
             <li class="list-group-item">
                 <h2 class="float-left">{{ case }}</h2>
-                <button id="{{ loop.index0 }}" type="button" class="btn btn-primary float-right case-button"
-                        data-toggle="tooltip" data-placement="bottom" title="Copy Text" name="{{ case }}">Copy</button>
+                <button id="{{ loop.index0 }}" type="button" class="float-right btn btn-dark btn-sm case-button"
+                        data-toggle="tooltip" data-placement="bottom" title="Copy Text" name="{{ case }}">
+                    <i class="fas fa-clipboard"></i></button>
             </li>
         {% endfor %}
     </ul>
@@ -76,6 +78,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/60d2241da6.js" crossorigin="anonymous"></script>
 
       <!-- Optional JavaScript -->
         <script type="text/javascript" src="{{ url_for('static', filename = 'randomName.js') }}"></script>

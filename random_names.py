@@ -826,8 +826,8 @@ def random_name():
 	kebab_case = first + "-" + second
 	flat_case = first + second
 	upper_case = first.upper() + "_" + second.upper()
-	c_case = first + "_" + second
-	all_cases = [snake_case, camel_case, capital_camel_case, kebab_case, flat_case, upper_case, c_case]
+	cobol_case = first.upper() + "-" + second.upper()
+	all_cases = [snake_case, camel_case, capital_camel_case, kebab_case, flat_case, upper_case, cobol_case]
 	return render_template('randomName.html', snake_case=snake_case, camel_case=camel_case, all_cases=all_cases)
 
 if __name__ == '__main__':
