@@ -58,8 +58,8 @@
         {% for case in all_cases %}
             <li class="list-group-item">
                 <h2 class="float-left">{{ case }}</h2>
-                <button id="{{ loop.index0 }}" type="button" class="btn btn-primary float-right case-button" onclick="copy('{{ case }}')"
-                        data-toggle="tooltip" data-placement="bottom" title="Copy Text">Copy</button>
+                <button id="{{ loop.index0 }}" type="button" class="btn btn-primary float-right case-button"
+                        data-toggle="tooltip" data-placement="bottom" title="Copy Text" name="{{ case }}">Copy</button>
             </li>
         {% endfor %}
     </ul>
