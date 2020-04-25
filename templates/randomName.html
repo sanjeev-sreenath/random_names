@@ -52,33 +52,13 @@
           </div>
         </nav>
 
-{#        <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom"#}
-{#                title="Tooltip on bottom"#}
-{#                id="my-button1">#}
-{#          Tooltip on bottom#}
-{#        </button>#}
-{##}
-{#        <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom"#}
-{#                    title="Tooltip on bottom"#}
-{#                    id="my-button2"#}
-{#                    onclick="sample('abcd')">#}
-{#              Tooltip on bottom 2#}
-{#            </button>#}
-{##}
-{#        <div style='margin: 20px;'>#}
-{#          <a id='copy-button' href='#' class='my-tool-tip' data-toggle="tooltip" data-placement="right" title="Copy to Clipboard">#}
-{#            <i class='glyphicon glyphicon-link'>sdfjhskjdfhskjfsfdf</i>#}
-{#          </a>#}
-{#        </div>#}
-
-
         <ul class="list-group text-center">
         <li class="list-group-item"><button type="button" class="btn btn-success btn-lg mt-3"
                                             onclick="anotherName()">Again</button></li>
         {% for case in all_cases %}
             <li class="list-group-item">
                 <h2 class="float-left">{{ case }}</h2>
-                <button id="{{ loop.index0 }}" type="button" class="btn btn-primary float-right" onclick="copy('{{ case }}')"
+                <button id="{{ loop.index0 }}" type="button" class="btn btn-primary float-right case-button" onclick="copy('{{ case }}')"
                         data-toggle="tooltip" data-placement="bottom" title="Copy Text">Copy</button>
             </li>
         {% endfor %}
