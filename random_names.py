@@ -818,8 +818,17 @@ right = [
 
 @app.route("/")
 def random_name():
-	name = random.choice(left) + "_" + random.choice(right)
-	return render_template('randomName.html', name=name)
+	first = random.choice(left)
+	second = random.choice(right)
+	snake_case = first + "_" + second
+	camel_case = first + second.capitalize()
+	capital_camel_case = first.capitalize() + second.capitalize()
+	kebab_case = first + "-" + second
+	flat_case = first + second
+	upper_case = first.upper() + "_" + second.upper()
+	c_case = first + "_" + second
+	all_cases = [snake_case, camel_case, capital_camel_case, kebab_case, flat_case, upper_case, c_case]
+	return render_template('randomName.html', snake_case=snake_case, camel_case=camel_case, all_cases=all_cases)
 
 if __name__ == '__main__':
 	app.run(debug=True, host='0.0.0.0')

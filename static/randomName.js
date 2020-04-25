@@ -1,17 +1,13 @@
-function myFunction() {
-  /* Get the text field */
-  var copyText = document.getElementById("randomName");
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
 
-  /* Select the text field */
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); /*For mobile devices*/
-
-  /* Copy the text inside the text field */
-  document.execCommand("copy");
-
-  /* Alert the copied text */
-  alert("Copied the text: " + copyText.value);
-}
+$("a.my-tool-tip").tooltip();
+$("#copy-button").on('click', function() {
+  var tooltip = $(this);
+  tooltip.attr('data-original-title', 'Copied!');
+  $("a.my-tool-tip").tooltip('show');
+});
 
 function copy(text) {
     var input = document.createElement('input');
@@ -23,6 +19,7 @@ function copy(text) {
     return result;
  }
 
- setTimeout(function(){
-    $(dialog).close();
-}, 10000);
+
+function anotherName() {
+    location.reload();
+}
