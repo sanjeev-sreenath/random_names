@@ -1,4 +1,5 @@
 # coding=utf-8
+import os
 import random
 from flask import Flask, render_template
 
@@ -831,4 +832,5 @@ def random_name():
 	return render_template('randomName.html', snake_case=snake_case, camel_case=camel_case, all_cases=all_cases)
 
 if __name__ == '__main__':
-	app.run(debug=True, host='0.0.0.0')
+	port = int(os.environ.get("PORT", 5000))
+	app.run(host='0.0.0.0', port=port)

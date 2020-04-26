@@ -1,7 +1,8 @@
-FROM python:alpine3.7
-ARG FLASK_ENTRYPOINT_FILE
-ENV FLASK_ENTRYPOINT_FILE=$FLASK_ENTRYPOINT_FILE
-COPY . /app
-WORKDIR /app
-RUN pip install -r requirements.txt
-ENTRYPOINT python $FLASK_ENTRYPOINT_FILE
+FROM python:3-alpine
+
+WORKDIR /usr/src/app
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
+ENV USER spin
+CMD [ "python", "./random_names.py" ]
